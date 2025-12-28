@@ -7,6 +7,57 @@
   <title>NS-MDS | Airbus</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    <div style="max-width:900px;margin:40px auto 0;padding:0 20px;text-align:center;">
+  <h2 style="margin:0 0 10px;">Turbulence Prediction Accuracy</h2>
+  <p style="opacity:.85;margin:0 0 20px;">Classical CFD baseline vs NS-MDS (demo scenarios)</p>
+
+  <div style="background:#111520;border-radius:12px;padding:18px;">
+    <canvas id="nsmdsChart" height="140"></canvas>
+  </div>
+</div>
+
+<script>
+  const ctx = document.getElementById('nsmdsChart').getContext('2d');
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['Scenario 1','Scenario 2','Scenario 3','Scenario 4','Scenario 5'],
+      datasets: [
+        {
+          label: 'Classical Model (RANS / LES)',
+          data: [71, 69, 72, 70, 68],
+          borderColor: '#777',
+          backgroundColor: 'rgba(150,150,150,0.08)',
+          tension: 0.4
+        },
+        {
+          label: 'NS-MDS',
+          data: [88, 90, 89, 91, 87],
+          borderColor: '#4aa3ff',
+          backgroundColor: 'rgba(74,163,255,0.14)',
+          tension: 0.4
+        }
+      ]
+    },
+    options: {
+      plugins: {
+        legend: { labels: { color: '#e6e6e6' } }
+      },
+      scales: {
+        y: {
+          min: 60, max: 95,
+          ticks: { color: '#ccc' },
+          grid: { color: '#222' }
+        },
+        x: {
+          ticks: { color: '#ccc' },
+          grid: { color: '#222' }
+        }
+      }
+    }
+  });
+</script>
     body {
       margin: 0;
       background: #0b0e14;
