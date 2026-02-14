@@ -1,0 +1,1 @@
+export default function Page(){return <main className="container-page py-12"><h1 className="text-4xl font-bold">cookies</h1><p className="mt-4">Plantilla editable. Sustituye este texto con el contenido legal definitivo de J&R Rehabilitaciones.</p></main>}

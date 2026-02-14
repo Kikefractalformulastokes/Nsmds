@@ -1,0 +1,3 @@
+import { PageLeadCTA } from '@/components/PageLeadCTA';
+
+export default function Page(){return <main className="container-page py-12"><h1 className="text-4xl font-bold">Rehabilitación y mantenimiento para comunidades de vecinos en Madrid</h1><p className="mt-4">Planificación por fases, mínima molestia, comunicación clara y parte de trabajo con fotos para presidente, vecinos y administrador.</p><ul className="mt-4 list-disc pl-5"><li>Prevención de humedades y filtraciones</li><li>Actuaciones por portales y horarios</li><li>Documentación antes/después</li></ul><PageLeadCTA title="Programar inspección"/></main>}
