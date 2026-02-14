@@ -1,0 +1,2 @@
+import Link from 'next/link';
+export default function Page(){return <main className="container-page py-20"><h1 className="text-4xl font-bold">¡Gracias! Hemos recibido tu solicitud</h1><p className="mt-4">Revisaremos la información y te contactaremos con los siguientes pasos.</p><div className="mt-6 flex gap-3"><Link href="/" className="btn-secondary">Volver al inicio</Link><Link href="/contacto" className="btn-primary">Enviar otro caso</Link></div></main>}
