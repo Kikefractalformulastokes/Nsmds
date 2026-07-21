@@ -1,0 +1,26 @@
+{
+  "title": "Avoiding single-observable calibration failure in NACA 0012: a dual-observable benchmark protocol for a memory-regularised flow-model extension",
+  "creators": [
+    {
+      "name": "Sanchez, Enrique",
+      "affiliation": "CoreSyn Lab, independent research programme"
+    }
+  ],
+  "description": "Public manuscript draft defining a dual-observable NACA 0012 protocol, documenting a single-observable calibration failure mode, and specifying reproducibility and falsification gates. Numerical claims remain provisional pending clean-room reproduction.",
+  "keywords": [
+    "NACA 0012",
+    "model assurance",
+    "aerodynamic validation",
+    "pressure coefficient",
+    "lift polar",
+    "reproducibility",
+    "NS-MDS"
+  ],
+  "publication_type": "preprint",
+  "version": "0.1-public-draft",
+  "language": "eng",
+  "access_right": "open",
+  "doi": null,
+  "status": "public-draft-not-archival"
+}
+
