@@ -11,10 +11,17 @@ works, entirely via repo Settings with no workflow file required — then mergin
 - No `.github/workflows/` directory exists in the repo — so there is no GitHub Actions-based
   auto-deploy visible in the tree itself.
 - No `CNAME` file exists — so no custom domain is wired through the repo itself either.
-- **Neither of those facts rules out GitHub Pages being enabled from repo Settings** (branch:
-  `main`, folder: `/`), which requires no in-repo file at all and is invisible to a
-  git-tool-only audit. This session has no browser/API access to check Settings → Pages
-  directly.
+- **Update 2026-07-22, confirmed via PR #3's commit status:** this repo has a **Vercel**
+  integration installed. Opening the PR triggered a status check — `Vercel: Deployment has
+  completed` — meaning Vercel already built and deployed a **preview** of this branch's commit.
+  This is exactly the kind of deploy mechanism that's invisible to a git-only audit (no in-repo
+  config file), and it confirms the risk below was not hypothetical.
+- **Standard Vercel git-integration behavior** deploys the default branch (`main`) to
+  **production** and every other branch/PR to an isolated **preview** URL. Under that standard
+  behavior, this branch's own preview is not production. **This session did not independently
+  verify the project's actual branch/production settings** — if `main` isn't Vercel's configured
+  production branch, or a custom domain assignment differs from the default, this could be wrong.
+- GitHub Pages being separately enabled from repo Settings remains unconfirmed either way.
 
 ## Therefore
 
@@ -35,3 +42,11 @@ works, entirely via repo Settings with no workflow file required — then mergin
 - No credits/money were spent.
 - No other property (CoreSyn, RiesgoDeObra, etc.) is affected by this branch at all — it only
   touches `nsmds`.
+
+## Separate finding: GitHub repo description still says "Nsmds airbus"
+
+The repository's own GitHub description metadata (visible on the repo page, in search results,
+and via the API) currently reads "Nsmds airbus" — a public Airbus reference outside any file
+diff, not covered by the `index.html`/`README.md` fix. Not changed by this session (repo
+metadata edits are a separate, more sensitive action than a file commit); flagged for Enrique's
+decision in the PR report.
