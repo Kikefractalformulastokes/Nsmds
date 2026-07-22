@@ -1,7 +1,17 @@
 # GitHub Repo Metadata Fix
 
-**Status: BLOCKED — no tool in this session can update GitHub repository metadata (the
-description field).**
+**Status: DONE (externally) — confirmed 2026-07-22.** A fresh read of PR #3 via the GitHub API
+(`pull_request_read`, both `base.repo.description` and `head.repo.description`) now shows the
+repo description as **"NS-MDS research prototype for aerospace simulation"** — exactly the
+requested text. **This session did not make that change** (see below — no tool available to this
+session can do it); it must have been applied directly by Enrique or another admin, most likely
+following the manual steps below. Recorded here for the audit trail, not claimed as this
+session's action.
+
+## Original blocker (for the record)
+
+No tool in this session could update GitHub repository metadata (the description field) —
+kept below since the same limitation would apply again for any *future* metadata change.
 
 ## What was attempted
 

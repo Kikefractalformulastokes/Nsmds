@@ -46,12 +46,32 @@ integration settings link were returned).
   `"merged": false`, `"state": "open"`).
 - No merge has happened — confirmed via the same read (`"merged": false`).
 
+## Update — actual preview URL found and attempted (2026-07-22, later same session)
+
+Vercel's own bot posted a status comment on PR #3 containing the real preview URL:
+
+```
+https://nsmds-git-claude-coresyn-ceos-inf-8b0e56-kikesanzsanzs-projects.vercel.app
+```
+
+(deployment status: "Ready"). Two fetch attempts were made against it:
+
+1. `mcp__Vercel__web_fetch_vercel_url` (the tool built specifically for authenticated/protected
+   Vercel deployments) → **failed**: "Unable to create shareable URL" — because this session's
+   Vercel account doesn't own the deployment (same root cause as the `get_deployment` 404 above).
+2. Plain `WebFetch` → **HTTP 403 Forbidden** — confirms the deployment has some form of access
+   protection (Vercel Authentication/SSO/password) that this session cannot pass through.
+
+This rules out the possibility that the block was just "wrong URL" — the correct URL was found
+and is confirmed protected against unauthenticated/wrong-account access.
+
 ## Recommended next step
 
-The Chrome agent (with a real browser and, if needed, Enrique's Vercel login for the
-`kikesanzsanzs-projects` team) should open the PR on github.com, click through to the actual
-Vercel preview link Vercel's bot posts as a PR comment, and perform the live visual checks listed
-above. Alternatively, Enrique can connect this session's Vercel MCP integration to the
-`kikesanzsanzs-projects` account instead of (or in addition to) `Gregory's projects`.
+The Chrome agent (with a real logged-in browser session for the `kikesanzsanzs-projects` Vercel
+team) should open the preview URL above directly and perform the live visual checks listed
+earlier in this document. Alternatively, Enrique can connect this session's Vercel MCP
+integration to the `kikesanzsanzs-projects` account instead of (or in addition to) `Gregory's
+projects`, or disable preview protection for this deployment if that's an acceptable trade-off.
 
-**Verdict for this action: BLOCK — not a policy hold, a genuine access/tooling gap.**
+**Verdict for this action: BLOCK — not a policy hold, a genuine access/tooling gap. The correct
+URL is known; access to open it is what's missing.**
