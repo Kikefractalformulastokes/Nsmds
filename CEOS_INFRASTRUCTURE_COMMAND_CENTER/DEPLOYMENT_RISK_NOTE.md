@@ -49,4 +49,12 @@ The repository's own GitHub description metadata (visible on the repo page, in s
 and via the API) currently reads "Nsmds airbus" — a public Airbus reference outside any file
 diff, not covered by the `index.html`/`README.md` fix. Not changed by this session (repo
 metadata edits are a separate, more sensitive action than a file commit); flagged for Enrique's
-decision in the PR report.
+decision in the PR report. See `GITHUB_REPO_METADATA_FIX.md` — this remains BLOCKED: no
+connected tool can update repo metadata; manual fix instructions are in that file.
+
+## See also
+
+`UPDATED_DEPLOYMENT_RISK_NOTE.md` — adds the Action 3 findings (production branch/domain
+verification attempt): the Vercel MCP connection in this session belongs to a different Vercel
+account than the one that actually deploys `nsmds`, so none of the production-branch/domain
+questions could be independently confirmed. Read that file for the full result.
