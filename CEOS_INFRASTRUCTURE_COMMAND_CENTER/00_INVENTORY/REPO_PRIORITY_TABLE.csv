@@ -1,0 +1,10 @@
+repo,accessible_this_session,classification,priority,notes
+nsmds,yes,RESEARCH/DEMO,audited,"Only repo in scope; audited clean, Airbus claim + markup fixed 2026-07-22"
+CoreSyn,no,UNKNOWN,high,"Main company web property per brief; needs add_repo"
+CEOS,no,UNKNOWN,high,"Internal OS; needs add_repo"
+ModelAssuranceLab,no,UNKNOWN,medium,"Enterprise product; needs add_repo"
+RiesgoDeObra,no,UNKNOWN,high,"Active commercial experiment; external QA reported via Enrique, not independently verified; needs add_repo for direct access"
+Materials,no,UNKNOWN,medium,"First internal scientific vertical; needs add_repo"
+Aerospace/Airbus_PoC,no,UNKNOWN,high,"Strategic priority; needs add_repo"
+mathematical_audit,no,UNKNOWN,low,"Referenced in brief only; needs add_repo"
+external_review_pack,no,UNKNOWN,low,"Referenced in brief only; needs add_repo"
