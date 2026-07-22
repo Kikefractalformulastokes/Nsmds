@@ -9,7 +9,7 @@ Canonical detail lives in `12_QA_REPORTS/INFRA_FINAL_PASS_BLOCK.md`. Summary:
 | 2. Repo/web inventory | FIX | Only 1 of ~9 named repos was auditable; rest UNKNOWN |
 | 3. CEOS | BLOCK | No CEOS system file found in scope; nothing to restore/patch |
 | 4. CoreSyn web | BLOCK | No CoreSyn web repo in scope |
-| 5. Aerospace/Airbus | FIX | `index.html` exists but has a claims risk + markup bug |
+| 5. Aerospace/Airbus | PASS (fixed 2026-07-22) | `index.html` claims risk resolved (Airbus→Aerospace) and markup bug fixed; committed on this branch, not deployed |
 | 6. Materials | BLOCK | Not in scope |
 | 7. RiesgoDeObra | BLOCK | Not in scope |
 | 8. Scientific demos | BLOCK | No demo repos in scope beyond the one Airbus chart page |

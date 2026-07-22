@@ -2,7 +2,7 @@
 
 | ID | Risk | Source | Likelihood | Impact | Status | Mitigation |
 |---|---|---|---|---|---|---|
-| SR-1 | `index.html` publicly names "Airbus" with no on-record relationship evidence | This repo | Medium | High (legal/reputational) | OPEN | Enrique confirms relationship status; see `CLAIMS_QA_REPORT.md` |
+| SR-1 | `index.html`/`README.md` publicly named "Airbus" with no on-record relationship evidence | This repo | Medium | High (legal/reputational) | **CLOSED 2026-07-22** | Changed to "Aerospace" on all public pages per Enrique's confirmed decision; Airbus retained only in private PoC docs (`06_AIRBUS_POC_LAB/`) |
 | SR-2 | Unpinned CDN script (`chart.js` latest) could change behavior unexpectedly | `index.html` | Low | Low | OPEN | Pin to a specific version |
 | SR-3 | No confirmed repo visibility/branch-protection settings on `nsmds` | Not verifiable via git tooling | Unknown | Medium | PENDING_ACCESS | Chrome/Enrique confirms repo Settings |
 | SR-4 | Unknown security posture of CoreSyn/RiesgoDeObra/ModelAssuranceLab/Materials/Aerospace repos and sites | No access this session | Unknown | Potentially High | PENDING_ACCESS | Grant repo/account access to re-run `SECURITY_CHECKLIST.md` |

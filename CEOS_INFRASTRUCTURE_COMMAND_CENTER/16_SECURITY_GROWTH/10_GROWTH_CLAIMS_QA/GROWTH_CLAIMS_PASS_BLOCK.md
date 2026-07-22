@@ -2,10 +2,10 @@
 
 | Item reviewed | Verdict | Note |
 |---|---|---|
-| `index.html` "Airbus" badge/title | **BLOCK** | Pending Enrique confirmation — see `BLOCKED_MARKETING_CLAIMS.md` |
+| `index.html` / `README.md` "Airbus" badge/title | **PASS (FIXED)** | Changed to "Aerospace" 2026-07-22 per Enrique's confirmed decision — see `BLOCKED_MARKETING_CLAIMS.md` |
 | RiesgoDeObra pricing copy | Not reviewed | Frozen, out of scope this pass |
 | CoreSyn/ModelAssuranceLab copy | Not reviewed | Not accessible; alignment task logged (`04_CORESYN/CORESYN_COPY_ALIGNMENT_TASK.md`) |
 | Any SEM ad copy | N/A | None written yet (`04_SEM/AD_COPY_BANK.md` is empty) |
 | Any content-engine piece | N/A | None written yet |
 
-**Overall: one open BLOCK, everything else N/A (nothing written yet to review).**
+**Overall: no open BLOCK. Everything else N/A (nothing written yet to review).**

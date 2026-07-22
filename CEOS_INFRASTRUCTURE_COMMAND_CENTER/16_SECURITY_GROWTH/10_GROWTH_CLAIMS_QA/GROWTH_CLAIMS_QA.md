@@ -14,6 +14,6 @@ FIX (rewrite) or BLOCK (don't publish) — never PASS with a caveat added after 
 
 ## Current open item
 
-`index.html`'s "Airbus" badge (see `12_QA_REPORTS/CLAIMS_QA_REPORT.md`) is the one concrete
-claims violation identified so far in this audit — pending Enrique's ruling on the underlying
-relationship.
+None open. `index.html`'s "Airbus" badge (see `12_QA_REPORTS/CLAIMS_QA_REPORT.md`) was the one
+concrete claims violation identified in this audit — resolved 2026-07-22 per Enrique's confirmed
+decision (changed to "Aerospace" on all public pages).

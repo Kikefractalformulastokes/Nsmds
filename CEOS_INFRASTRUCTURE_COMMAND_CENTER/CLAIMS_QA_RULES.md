@@ -7,11 +7,11 @@ this correctly):
 1. No claim of NASA validation, Airbus endorsement, third-party certification, or independent
    scientific validation unless a signed, evidenced review exists.
 2. No use of a third-party company name as if it were a confirmed client/partner without written
-   permission. **Current finding:** `index.html` badges the page "Airbus · Technical
-   Demonstration" and titles it "NS-MDS | Airbus Demo" — this reads as a claim of an Airbus
-   relationship. No evidence of an Airbus engagement exists in this repo. Flagged **BLOCK** in
-   `12_QA_REPORTS/CLAIMS_QA_REPORT.md` pending Enrique confirmation of what relationship (if any)
-   exists and whether "Airbus" may be used in public copy.
+   permission. **Resolved 2026-07-22:** `index.html` and `README.md` badged/titled the public
+   page with "Airbus" with no on-record relationship evidence. Per Enrique's confirmed decision,
+   both were changed to "Aerospace" — public pages carry no "Airbus" reference; the name is
+   reserved for private outreach / PoC proposal documents only (see
+   `06_AIRBUS_POC_LAB/`). Status: **FIXED**, see `12_QA_REPORTS/CLAIMS_QA_REPORT.md`.
 3. No third-party logos without permission.
 4. Materials claims: "E2 internal" language only — never "E3" or "validated externally" until
    independent reproduction is complete (per brief, no Materials content exists in this repo to
