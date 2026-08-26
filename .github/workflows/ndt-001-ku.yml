@@ -29,6 +29,11 @@ jobs:
           mkdir -p research/ndt-001-ku/results_continuous
           set -o pipefail
           python research/ndt-001-ku/benchmark_continuous.py | tee research/ndt-001-ku/results_continuous/run.log
+      - name: Run M5B adaptive localization gate
+        run: |
+          mkdir -p research/ndt-001-ku/results_adaptive
+          set -o pipefail
+          python research/ndt-001-ku/benchmark_adaptive.py | tee research/ndt-001-ku/results_adaptive/run.log
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -37,4 +42,5 @@ jobs:
             research/ndt-001-ku/results/
             research/ndt-001-ku/results_lift/
             research/ndt-001-ku/results_continuous/
-# trigger: continuous-localization-m5-2026-08-26
+            research/ndt-001-ku/results_adaptive/
+# trigger: adaptive-m5b-2026-08-26
