@@ -24,6 +24,11 @@ jobs:
           mkdir -p research/ndt-001-ku/results_lift
           set -o pipefail
           python research/ndt-001-ku/benchmark_lift_preserving.py | tee research/ndt-001-ku/results_lift/run.log
+      - name: Run M5 continuous localization gate
+        run: |
+          mkdir -p research/ndt-001-ku/results_continuous
+          set -o pipefail
+          python research/ndt-001-ku/benchmark_continuous.py | tee research/ndt-001-ku/results_continuous/run.log
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -31,4 +36,5 @@ jobs:
           path: |
             research/ndt-001-ku/results/
             research/ndt-001-ku/results_lift/
-# trigger: lift-preserving-gate-2026-08-26
+            research/ndt-001-ku/results_continuous/
+# trigger: continuous-localization-m5-2026-08-26
