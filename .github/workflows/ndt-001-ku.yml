@@ -19,8 +19,15 @@ jobs:
           mkdir -p research/ndt-001-ku/results
           set -o pipefail
           python research/ndt-001-ku/benchmark_ku.py | tee research/ndt-001-ku/results/run.log
+      - name: Run lift-preserving challenger
+        run: |
+          mkdir -p research/ndt-001-ku/results_lift
+          set -o pipefail
+          python research/ndt-001-ku/benchmark_lift_preserving.py | tee research/ndt-001-ku/results_lift/run.log
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: ndt-001-ku-results
-          path: research/ndt-001-ku/results/
+          path: |
+            research/ndt-001-ku/results/
+            research/ndt-001-ku/results_lift/
