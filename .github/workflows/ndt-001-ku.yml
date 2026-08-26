@@ -15,8 +15,12 @@ jobs:
           python-version: '3.11'
       - run: pip install numpy pandas scipy scikit-learn
       - name: Run frozen benchmark
-        run: python research/ndt-001-ku/benchmark_ku.py | tee research/ndt-001-ku/results/run.log
+        run: |
+          mkdir -p research/ndt-001-ku/results
+          set -o pipefail
+          python research/ndt-001-ku/benchmark_ku.py | tee research/ndt-001-ku/results/run.log
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: ndt-001-ku-results
           path: research/ndt-001-ku/results/
