@@ -31,3 +31,4 @@ jobs:
           path: |
             research/ndt-001-ku/results/
             research/ndt-001-ku/results_lift/
+# trigger: lift-preserving-gate-2026-08-26
