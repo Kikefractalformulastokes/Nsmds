@@ -1,0 +1,22 @@
+name: NDT-001 KU Localization Benchmark
+on:
+  push:
+    paths:
+      - 'research/ndt-001-ku/**'
+      - '.github/workflows/ndt-001-ku.yml'
+  workflow_dispatch:
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install numpy pandas scipy scikit-learn
+      - name: Run frozen benchmark
+        run: python research/ndt-001-ku/benchmark_ku.py | tee research/ndt-001-ku/results/run.log
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ndt-001-ku-results
+          path: research/ndt-001-ku/results/
