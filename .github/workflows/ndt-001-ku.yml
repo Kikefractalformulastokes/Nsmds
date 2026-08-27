@@ -49,6 +49,11 @@ jobs:
           mkdir -p research/ndt-001-ku/results_m7
           set -o pipefail
           python research/ndt-001-ku/ablate_m7.py | tee research/ndt-001-ku/results_m7/run.log
+      - name: Run M8 internal blind validation
+        run: |
+          mkdir -p research/ndt-001-ku/results_m8
+          set -o pipefail
+          python research/ndt-001-ku/validate_m8_blind.py | tee research/ndt-001-ku/results_m8/run.log
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -61,4 +66,5 @@ jobs:
             research/ndt-001-ku/results_adaptive_calibrated/
             research/ndt-001-ku/results_m6/
             research/ndt-001-ku/results_m7/
-# trigger: m7-attribution-ablation-2026-08-27
+            research/ndt-001-ku/results_m8/
+# trigger: m8-internal-blind-validation-2026-08-27
