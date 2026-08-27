@@ -39,6 +39,11 @@ jobs:
           mkdir -p research/ndt-001-ku/results_adaptive_calibrated
           set -o pipefail
           python research/ndt-001-ku/benchmark_adaptive_calibrated.py | tee research/ndt-001-ku/results_adaptive_calibrated/run.log
+      - name: Run M6 paired statistical validation
+        run: |
+          mkdir -p research/ndt-001-ku/results_m6
+          set -o pipefail
+          python research/ndt-001-ku/validate_m6.py | tee research/ndt-001-ku/results_m6/run.log
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -49,4 +54,5 @@ jobs:
             research/ndt-001-ku/results_continuous/
             research/ndt-001-ku/results_adaptive/
             research/ndt-001-ku/results_adaptive_calibrated/
-# trigger: adaptive-m5c-2026-08-27
+            research/ndt-001-ku/results_m6/
+# trigger: m6-statistical-validation-2026-08-27
