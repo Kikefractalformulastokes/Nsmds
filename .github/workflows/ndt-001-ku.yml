@@ -34,6 +34,11 @@ jobs:
           mkdir -p research/ndt-001-ku/results_adaptive
           set -o pipefail
           python research/ndt-001-ku/benchmark_adaptive.py | tee research/ndt-001-ku/results_adaptive/run.log
+      - name: Run M5C training-only calibrated routing gate
+        run: |
+          mkdir -p research/ndt-001-ku/results_adaptive_calibrated
+          set -o pipefail
+          python research/ndt-001-ku/benchmark_adaptive_calibrated.py | tee research/ndt-001-ku/results_adaptive_calibrated/run.log
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -43,4 +48,5 @@ jobs:
             research/ndt-001-ku/results_lift/
             research/ndt-001-ku/results_continuous/
             research/ndt-001-ku/results_adaptive/
-# trigger: adaptive-m5b-2026-08-26
+            research/ndt-001-ku/results_adaptive_calibrated/
+# trigger: adaptive-m5c-2026-08-27
