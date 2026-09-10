@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it using the metadata below."
+title: "Adversarial Reproducibility Benchmark for Multi-Time Dynamics: Stability, modal energy, interaction closure, and numerical boundary sensitivity in a minimal (3,3) scalar model"
+type: article
+authors:
+  - family-names: "Sánchez Lorenzo"
+    given-names: "Enrique"
+    orcid: "https://orcid.org/0009-0000-5362-6507"
+affiliation: "CoreSyn, Madrid, Spain"
+version: "0.4-public-preprint"
+date-released: 2026-09-10
+repository-code: "https://github.com/Kikefractalformulastokes/Nsmds"
+keywords:
+  - multiple time dimensions
+  - ultrahyperbolic dynamics
+  - reproducibility
+  - stability
+  - interaction closure
+  - numerical precision
