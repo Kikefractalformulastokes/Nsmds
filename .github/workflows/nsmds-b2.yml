@@ -1,0 +1,38 @@
+name: NS-MDS B2 Smooth Controls
+
+on:
+  push:
+    paths:
+      - 'research/openai-nsmds-twin/b2_smooth_controls.py'
+      - '.github/workflows/nsmds-b2.yml'
+  workflow_dispatch:
+
+jobs:
+  validate-b2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run B2 smooth controls
+        run: |
+          set -euxo pipefail
+          python research/openai-nsmds-twin/b2_smooth_controls.py | tee b2_run.log
+          sha256sum research/openai-nsmds-twin/b2_smooth_controls.py > b2_source_hash.txt
+          printf 'run_id=%s\ncommit=%s\n' "$GITHUB_RUN_ID" "$GITHUB_SHA" > b2_run_identity.txt
+
+      - name: Upload evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nsmds-b2-evidence
+          path: |
+            b2_results.json
+            b2_run.log
+            b2_source_hash.txt
+            b2_run_identity.txt
