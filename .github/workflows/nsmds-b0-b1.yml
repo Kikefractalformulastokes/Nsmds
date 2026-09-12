@@ -1,0 +1,40 @@
+name: NS-MDS B0 B1 Validation
+
+on:
+  push:
+    paths:
+      - 'research/openai-nsmds-twin/AMENDMENT_B0_v0.2.md'
+      - 'research/openai-nsmds-twin/b0_b1_harness.py'
+      - '.github/workflows/nsmds-b0-b1.yml'
+  workflow_dispatch:
+
+jobs:
+  validate-b0-b1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run B0 B1 harness
+        working-directory: research/openai-nsmds-twin
+        run: |
+          set -euxo pipefail
+          python b0_b1_harness.py | tee b0_b1_stdout.log
+          sha256sum AMENDMENT_B0_v0.2.md b0_b1_harness.py b0_b1_results.json | tee b0_b1_hashes.txt
+
+      - name: Upload evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nsmds-b0-b1-evidence
+          path: |
+            research/openai-nsmds-twin/AMENDMENT_B0_v0.2.md
+            research/openai-nsmds-twin/b0_b1_harness.py
+            research/openai-nsmds-twin/b0_b1_results.json
+            research/openai-nsmds-twin/b0_b1_stdout.log
+            research/openai-nsmds-twin/b0_b1_hashes.txt
